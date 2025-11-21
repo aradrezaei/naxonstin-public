@@ -3,8 +3,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Phone } from "lucide-react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import {
   Code2, Brain, Palette, Bot, Music, DollarSign, Brush, Camera
 } from "lucide-react";
@@ -41,7 +39,6 @@ export default function HomePage() {
 
   return (
     <>
-      <Navbar />
 
       <section className={`relative min-h-screen flex items-center overflow-hidden transition-all duration-1000
         ${isDark 
@@ -171,7 +168,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Footer />
     </>
   );
 }

@@ -80,33 +80,40 @@ export default function Navbar() {
       <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
         scrolled
           ? "bg-white/95 dark:bg-gray-950/95 shadow-lg backdrop-blur-2xl"
-          : "bg-gradient-to-b from-purple-950/98 via-purple-900/95 to-purple-900/90 backdrop-blur-2xl"
+          : " backdrop-blur-2xl"
       }`}>
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex items-center justify-between h-20">
 
             {/* چپ — همبرگر + لوگو */}
-            <div className="flex items-center gap-4">
-              <button
-                onClick={() => setMobileOpen(!mobileOpen)}
-                className="lg:hidden z-50"
-              >
-                <Menu className={`w-7 h-7 transition-all ${mobileOpen ? "opacity-0" : "opacity-100"} ${scrolled ? "text-gray-900 dark:text-white" : "text-white"}`} />
-                <X className={`w-7 h-7 absolute transition-all ${mobileOpen ? "opacity-100" : "opacity-0"} ${scrolled ? "text-gray-900 dark:text-white" : "text-white"}`} />
-              </button>
+{/* چپ — لوگو + عنوان */}
+<div className="flex items-center gap-5">
+  {/* دکمه همبرگر فقط تو موبایل */}
+  <button
+    onClick={() => setMobileOpen(!mobileOpen)}
+    className="lg:hidden z-50"
+  >
+    <Menu className={`w-7 h-7 transition-all ${mobileOpen ? "opacity-0" : "opacity-100"} ${scrolled ? "text-gray-900 dark:text-white" : "text-white"}`} />
+    <X className={`w-7 h-7 absolute transition-all ${mobileOpen ? "opacity-100" : "opacity-0"} ${scrolled ? "text-gray-900 dark:text-white" : "text-white"}`} />
+  </button>
 
-              <a href="/" className="flex items-center gap-4">
-                <div className="relative group">
-                  <div className="absolute -inset-3 bg-gradient-to-br from-purple-500/50 via-pink-500/30 to-purple-700/50 blur-3xl opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
-                  <div className="relative w-11 h-11 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center text-white font-black text-2xl shadow-xl border border-white/20">
-                    ن
-                  </div>
-                </div>
-                <span className={`hidden lg:block text-2xl font-black tracking-tight ${scrolled ? "text-gray-900 dark:text-white" : "text-white"}`}>
-                  آموزشگاه نخستین
-                </span>
-              </a>
-            </div>
+  <a href="/" className="flex items-center gap-5">
+    {/* لوگو — دقیقاً مثل فوتر */}
+    <div className="relative w-12 h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-purple-700 to-purple-900 rounded-2xl shadow-xl flex items-center justify-center border border-purple-300 dark:border-purple-700 overflow-hidden">
+      {/* لوگوی واقعی */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/logo.png')" }}
+      />
+      {/* fallback: حرف ن */}
+    </div>
+
+    {/* عنوان — فقط تو دسکتاپ */}
+    <span className={`hidden lg:block text-2xl font-black tracking-tight ${scrolled ? "text-gray-900 dark:text-white" : "text-white"}`}>
+      آموزشگاه نخستین
+    </span>
+  </a>
+</div>
 
             {/* منوی دسکتاپ */}
             <nav className={`hidden lg:flex items-center gap-1 font-medium ${scrolled ? "text-gray-700 dark:text-gray-300" : "text-white/90"}`}>
@@ -136,7 +143,7 @@ export default function Navbar() {
 
             {/* راست */}
             <div className="flex items-center gap-4">
-              <button onClick={toggleTheme} className="p-3 bg-white/10 dark:bg-white/5 backdrop-blur-lg rounded-full hover:scale-110 transition-all">
+              <button onClick={toggleTheme} className="p-3 bg-black/30 dark:bg-white/20 backdrop-blur-lg rounded-full hover:scale-110 transition-all">
                 {isDark ? <Sun className="w-5 h-5 text-yellow-400" /> : <Moon className="w-5 h-5 text-white/80" />}
               </button>
               <a href="/login" className="hidden lg:block px-8 py-3.5 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-xl font-bold transition-all">
