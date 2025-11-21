@@ -94,7 +94,7 @@ export default function Navbar() {
     onClick={() => setMobileOpen(!mobileOpen)}
     className="lg:hidden z-50"
   >
-    <Menu className={`w-7 h-7 transition-all ${mobileOpen ? "opacity-0" : "opacity-100"} ${scrolled ? "text-gray-900 dark:text-white" : "text-white"}`} />
+    <Menu className={`w-7 h-7 transition-all ${mobileOpen ? "opacity-0" : "opacity-100"} ${scrolled ? "text-gray-900 dark:text-white" : "text-gray-900 dark:text-white"}`} />
     <X className={`w-7 h-7 absolute transition-all ${mobileOpen ? "opacity-100" : "opacity-0"} ${scrolled ? "text-gray-900 dark:text-white" : "text-white"}`} />
   </button>
 

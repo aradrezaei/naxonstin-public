@@ -77,17 +77,18 @@ export default function HomePage() {
   <div className="container mx-auto px-5 sm:px-6 relative z-10">
     <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center max-w-7xl mx-auto">
 
-      {/* Hero Image */}
-      <div className="order-1 lg:order-2 flex justify-center">
-        <Image
-          src="https://faradars.org/wp-content/uploads/2024/10/28/hero-illustration.svg"
-          alt="Hero Illustration"
-          width={650}
-          height={650}
-          className="w-[80%] max-w-sm sm:max-w-md lg:max-w-lg drop-shadow-2xl"
-          priority
-        />
-      </div>
+{/* Hero Image */}
+<div className="order-1 lg:order-2 flex justify-center mt-12 lg:mt-0">
+  <Image
+    src="https://faradars.org/wp-content/uploads/2024/10/28/hero-illustration.svg"
+    alt="Hero Illustration"
+    width={650}
+    height={650}
+    className="w-[80%] max-w-sm sm:max-w-md lg:max-w-lg drop-shadow-2xl"
+    priority
+  />
+</div>
+
 
       {/* Text Section */}
       <div className="order-2 lg:order-1 text-center lg:text-right space-y-6 sm:space-y-8 max-w-xl lg:max-w-2xl">
@@ -151,7 +152,7 @@ export default function HomePage() {
             "
           >
             <Phone className="w-5 h-5" />
-            مشاوره رایگان: ۰۲۱-۸۸۴۵۶۷۸۹
+            مشاوره رایگان: ۶۵۵۶۵۰۰۴-۰۲۱
           </a>
 
           <a

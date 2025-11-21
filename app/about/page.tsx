@@ -32,29 +32,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* آمار — سنگین و رسمی */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900/50 border-y border-gray-200 dark:border-gray-800">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
-            {[
-              { number: "۲۳", label: "سال سابقه فعالیت", suffix: "+" },
-              { number: "۱۰۰٬۰۰۰", label: "فارغ‌التحصیل موفق", suffix: "+" },
-              { number: "۴۵۰", label: "دوره تخصصی", suffix: "+" },
-              { number: "۹۸", label: "رضایت دانشجویان", suffix: "%" },
-            ].map((stat, i) => (
-              <div key={i} className="text-center">
-                <div className="text-6xl font-black text-purple-700 dark:text-purple-400">
-                  {stat.number}
-                  <span className="text-4xl">{stat.suffix}</span>
-                </div>
-                <p className="text-gray-600 dark:text-gray-400 mt-4 text-lg font-medium">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* داستان ما — بسیار رسمی و قابل اعتماد */}
       <section className="py-24 bg-white dark:bg-gray-900">
