@@ -6,6 +6,8 @@ import { Phone } from "lucide-react";
 import {
   Code2, Brain, Palette, Bot, Music, DollarSign, Brush, Camera
 } from "lucide-react";
+import Categories from "@/components/Categories";
+import WhyChooseUs from "@/components/WhyChooseUs";
 
 export default function HomePage() {
   const [isDark, setIsDark] = useState(false);
@@ -29,17 +31,7 @@ export default function HomePage() {
     });
   }, []);
 
-  /* Categories (grid section) */
-  const categories = [
-    { name: "برنامه‌نویسی و توسعه", icon: Code2, color: "from-blue-500 to-cyan-500" },
-    { name: "هوش مصنوعی", icon: Brain, color: "from-purple-500 to-pink-500" },
-    { name: "طراحی و گرافیک", icon: Palette, color: "from-orange-500 to-red-500" },
-    { name: "رباتیک", icon: Bot, color: "from-green-500 to-emerald-500" },
-    { name: "موسیقی", icon: Music, color: "from-indigo-500 to-purple-500" },
-    { name: "مهارت‌های مالی", icon: DollarSign, color: "from-yellow-500 to-amber-600" },
-    { name: "هنرهای دستی", icon: Brush, color: "from-pink-500 to-rose-500" },
-    { name: "عکاسی و فیلم‌برداری", icon: Camera, color: "from-teal-500 to-cyan-600" },
-  ];
+
 
   return (
     <>
@@ -178,71 +170,10 @@ export default function HomePage() {
 
 </section>
 
+    <Categories />
 
-      {/* ==== CATEGORIES SECTION ==== */}
-      <section className="py-20 sm:py-28 bg-gray-50 dark:bg-gray-900 transition-colors duration-1000">
-        <div className="container mx-auto px-4 sm:px-6">
+    <WhyChooseUs />
 
-          <div className="text-center mb-16 sm:mb-20">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 dark:text-white mb-4">
-              دسته‌بندی‌های آموزشی
-            </h2>
-            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400">
-              مهارت آینده‌ات رو همین امروز انتخاب کن
-            </p>
-          </div>
-
-          {/* Grid of categories */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 max-w-7xl mx-auto">
-            {categories.map((cat, i) => {
-              const Icon = cat.icon;
-              return (
-                <div
-                  key={i}
-                  className="
-                    group relative bg-white dark:bg-gray-800
-                    rounded-3xl overflow-hidden shadow-xl
-                    hover:shadow-3xl transition-all duration-1000 ease-out
-                    hover:-translate-y-8 cursor-pointer
-                  "
-                  style={{ transitionDelay: `${i * 80}ms` }}
-                >
-                  {/* Hover color glow */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${cat.color} opacity-0 group-hover:opacity-30 transition-opacity duration-1000`} />
-
-                  {/* Outer neon blur */}
-                  <div className="absolute -inset-1 bg-gradient-to-br from-purple-600 to-pink-600 opacity-0 group-hover:opacity-60 blur-2xl transition-opacity duration-1000" />
-
-                  <div className="relative p-6 sm:p-8 lg:p-10 text-center">
-
-                    {/* Icon */}
-                    <div className={`w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-6 rounded-3xl bg-gradient-to-br ${cat.color} p-4 sm:p-5 shadow-2xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-1000`}>
-                      <Icon className="w-full h-full text-white" />
-                    </div>
-
-                    {/* Title */}
-                    <h3 className="text-lg sm:text-xl lg:text-2xl font-black text-gray-900 dark:text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:to-pink-500 transition-all duration-700">
-                      {cat.name}
-                    </h3>
-
-                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-6">
-                      بیش از ۲۰ دوره حرفه‌ای
-                    </p>
-
-                    {/* Hover text animation */}
-                    <div className="overflow-hidden h-8">
-                      <span className="inline-block text-purple-600 dark:text-purple-400 font-bold text-sm sm:text-base translate-y-12 group-hover:translate-y-0 transition-transform duration-1000 ease-out">
-                        مشاهده دوره‌ها
-                      </span>
-                    </div>
-
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
     </>
   );
 }
