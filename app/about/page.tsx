@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { CheckCircle, Award, Users, GraduationCap, Building2, Trophy, ArrowRight, Shield } from "lucide-react";
 
 export default function AboutPage() {
@@ -180,18 +181,18 @@ export default function AboutPage() {
             با مدرک معتبر، سابقه ۲۳ ساله و همراهی تا روز قبولی در آزمون رسمی
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <a 
-              href="/courses" 
+            <Link
+              href="/courses"
               className="px-12 py-6 bg-white text-purple-700 rounded-xl font-bold text-xl hover:bg-gray-100 transition shadow-xl"
             >
               مشاهده دوره‌های آموزشی
-            </a>
-            <a 
-              href="/contact" 
+            </Link>
+            <Link
+              href="/contact"
               className="px-12 py-6 bg-transparent border-4 border-white text-white rounded-xl font-bold text-xl hover:bg-white/10 transition"
             >
               دریافت مشاوره رایگان
-            </a>
+            </Link>
           </div>
         </div>
       </section>

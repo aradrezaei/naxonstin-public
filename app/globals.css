@@ -33,3 +33,25 @@
 .dark {
   color-scheme: dark;
 }
+
+/* انیمیشن fade-in برای transitions */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+/* View Transitions API — برای مرورگرهای پشتیبانی‌کننده */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.3s;
+}

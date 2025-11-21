@@ -1,11 +1,13 @@
 "use client";
 
+import Link from "next/link";
 import { Facebook, Instagram, Youtube, Twitter, Mail, Phone, MapPin, ArrowUp } from "lucide-react";
 
 export default function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
 
   const socialLinks = [
     { icon: Instagram, href: "#", color: "hover:text-pink-500" },
@@ -81,13 +83,13 @@ export default function Footer() {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 hover:translate-x-2 transition-all duration-300 flex items-center group"
                   >
                     <span className="w-1.5 h-1.5 bg-purple-500 rounded-full mr-3 opacity-0 group-hover:opacity-100 transition" />
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -101,13 +103,13 @@ export default function Footer() {
             </h3>
             <div className="grid grid-cols-2 gap-3">
               {categories.map((cat) => (
-                <a
+                <Link
                   key={cat}
-                  href="#"
+                  href="/categories"
                   className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-gray-100 dark:hover:bg-white/5 px-4 py-2 rounded-lg transition-all duration-300 text-sm backdrop-blur-sm border border-gray-200 dark:border-white/10 hover:border-purple-400/50"
                 >
                   {cat}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -157,9 +159,9 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-600 dark:text-gray-500">
           <p>© ۱۴۰۴ - ۲۰۲۵ آموزشگاه نخستین • تمام حقوق محفوظ است</p>
           <div className="flex items-center gap-8">
-            <a href="#" className="hover:text-purple-600 dark:hover:text-purple-400 transition">حریم خصوصی</a>
-            <a href="#" className="hover:text-purple-600 dark:hover:text-purple-400 transition">شرایط استفاده</a>
-            <a href="#" className="hover:text-purple-600 dark:hover:text-purple-400 transition">سوالات متداول</a>
+            <Link href="/privacy" className="hover:text-purple-600 dark:hover:text-purple-400 transition">حریم خصوصی</Link>
+            <Link href="/terms" className="hover:text-purple-600 dark:hover:text-purple-400 transition">شرایط استفاده</Link>
+            <Link href="/faq" className="hover:text-purple-600 dark:hover:text-purple-400 transition">سوالات متداول</Link>
           </div>
         </div>
       </div>
